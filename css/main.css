@@ -1,0 +1,140 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+left: 0;
+}
+
+#main {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 100%;
+}
+
+#area {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex: 1;
+	display: flex;
+	justify-content: space-around;
+	overflow: auto;
+}
+
+#tools {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	overflow: auto;
+	width: 580px;
+	height: 100%;
+	transition: width .8s;
+}
+
+#tools2 {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: none;
+    
+    position: fixed;  /* Make the element fixed at the bottom */
+    bottom: 100px;        /* Position it at the bottom of the page (used to be 0) */
+    width: 100%;      /* Full width across the page */
+    height: 100px;    /* Set the height to 580px (used to be 160)*/
+    
+    transition: width .8s;
+    z-index: 10000;    /* Ensure it's on top of other content, was 99 */
+}
+
+#tools2 > div:hover {
+    transform: scale(2);
+	border: 5px solid black;
+	
+}
+
+@media only screen and (max-width: 1700px) {
+	#tools {
+		width: 440px;
+	}
+}
+
+@media only screen and (max-width: 1540px) {
+	#tools {
+		width: 300px;
+	}
+}
+@media only screen and (max-width: 1380px) {
+	#tools {
+		width: 160px;
+	}
+}
+
+#tools > div {
+	display: block;
+	background-image: url('../textures/01_130x66_130x230.png');
+	background-repeat: no-repeat;
+	background-size: auto;
+	width: 130px;
+	height: 230px;
+	border: 2px dashed transparent;
+	box-sizing: border-box;
+}
+
+
+#tools2 > div {
+	display: block;
+	background-image: url('../textures/01_130x66_130x230.png');
+	background-repeat: no-repeat;
+	background-size: auto;
+	width: 130px;
+	height: 90px;
+	border: 2px dashed transparent;
+	box-sizing: border-box;
+	background-position: bottom;	
+	border-top: 5px solid black;
+	border-bottom: 5px solid black;
+	border-left: 2.5px solid black;
+	border-right: 2.5px solid black;
+	background-color: blue;
+}
+
+#tools2 > div.selected {
+	border-color: lime;
+}
+
+#tools > div.selected {
+	border-color: #b05355;
+}
+
+@media only screen and (max-width: 966px) {
+
+	#main {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	#tools {
+		display: flex;
+		align-items: center;
+		overflow: auto;
+		width: 100%;
+		height: 240px;
+	}
+	#area {
+		justify-content: flex-start;
+	}
+	
+}
